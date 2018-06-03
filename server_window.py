@@ -31,6 +31,13 @@ class ServerWindow:
     listo_s = False
     listo_c = False
 
+    #matriz de sprites 
+    m = [[None,None,None,None,None,None,None,None,None],
+         [None,None,None,None,None,None,None,None,None],
+         [None,None,None,None,None,None,None,None,None],
+         [None,None,None,None,None,None,None,None,None],
+         [None,None,None,None,None,None,None,None,None]]
+
     
     # Se llama desde main.py cuando se crea la ventana
     def start(self):        
@@ -45,6 +52,16 @@ class ServerWindow:
             self.socket_s.close()
         if self.socket_c != None:
             self.socket_c.close()
+
+#get info para la matriz de sprites 
+    def get_info(self):
+        for elemnt in self.m:
+            print(' ')
+            for x in elemnt:
+                if x != None:
+                    print(x,',',end='')
+                    continue
+                print(x,',',end='')
 
     def set_initial_ui(self):
         pygame.display.set_caption('PvZ Duel - Server')
@@ -163,24 +180,28 @@ class ServerWindow:
             self.new_sprite = PersonajeSprite("media/images/verdeF.png")
             lista = [c,f]
             print(lista)
+            self.m[f][c] = self.new_sprite
             self.set_sprite(lista)
 
         if nombre == 'P002' :
             self.new_sprite = PersonajeSprite("media/images/nuezF.png")
             lista = [c,f]
             print(lista)
+            self.m[f][c] = self.new_sprite
             self.set_sprite(lista)
 
         if nombre == 'P003'  :
             self.new_sprite = PersonajeSprite("media/images/zombie1F.png")
             lista = [c,f]
             print(lista)
+            self.m[f][c] = self.new_sprite
             self.set_sprite(lista)
 
         if nombre == 'P004':
             self.new_sprite = PersonajeSprite("media/images/zombie2F.png")
             lista = [c,f]
             print(lista)
+            self.m[f][c] = self.new_sprite
             self.set_sprite(lista)
         else:
             return None
@@ -227,63 +248,106 @@ class ServerWindow:
             
             elif self.cuad11.check_click(mouse_x,mouse_y):
                 x = self.cuad11.retornar_pos()
+                print('Matriz de Sprites')
+                self.m[x[0]-1][x[1]-1] = self.new_sprite
+                self.get_info() 
                 self.set_sprite(x)
 
             elif self.cuad12.check_click(mouse_x,mouse_y):
                 x = self.cuad12.retornar_pos()
+                print('Matriz de Sprites')
+                self.m[x[0]-1][x[1]-1] = self.new_sprite
                 self.set_sprite(x)
 
             elif self.cuad13.check_click(mouse_x,mouse_y):
                 x = self.cuad13.retornar_pos()
+                print('Matriz de Sprites')
+                self.m[x[0]-1][x[1]-1] = self.new_sprite
+                self.get_info() 
                 self.set_sprite(x)
 
             elif self.cuad14.check_click(mouse_x,mouse_y):
                 x = self.cuad14.retornar_pos()
+                self.m[x[0]-1][x[1]-1] = self.new_sprite
+                self.get_info() 
                 self.set_sprite(x)
 
             elif self.cuad15.check_click(mouse_x,mouse_y):
                 x = self.cuad15.retornar_pos()
+                print('Matriz de Sprites')
+                self.m[x[0]-1][x[1]-1] = self.new_sprite
+                self.get_info() 
                 self.set_sprite(x)
 
 
             elif self.cuad21.check_click(mouse_x,mouse_y):
                 x = self.cuad21.retornar_pos()
+                print('Matriz de Sprites')
+                self.m[x[0]-1][x[1]-1] = self.new_sprite
+                self.get_info() 
                 self.set_sprite(x)
 
             elif self.cuad22.check_click(mouse_x,mouse_y):
                 x = self.cuad22.retornar_pos()
+                print('Matriz de Sprites')
+                self.m[x[0]-1][x[1]-1] = self.new_sprite
+                self.get_info() 
                 self.set_sprite(x)
 
             elif self.cuad23.check_click(mouse_x,mouse_y):
                 x = self.cuad23.retornar_pos()
+                print('Matriz de Sprites')
+                self.m[x[0]-1][x[1]-1] = self.new_sprite
+                self.get_info() 
                 self.set_sprite(x)
 
             elif self.cuad24.check_click(mouse_x,mouse_y):
                 x = self.cuad24.retornar_pos()
+                print('Matriz de Sprites')
+                self.m[x[0]-1][x[1]-1] = self.new_sprite
+                self.get_info() 
                 self.set_sprite(x)
 
             elif self.cuad25.check_click(mouse_x,mouse_y):
                 x = self.cuad25.retornar_pos()
+                print('Matriz de Sprites')
+                self.m[x[0]-1][x[1]-1] = self.new_sprite
+                self.get_info() 
                 self.set_sprite(x)
 
             elif self.cuad31.check_click(mouse_x,mouse_y):
                 x = self.cuad31.retornar_pos()
+                print('Matriz de Sprites')
+                self.m[x[0]-1][x[1]-1] = self.new_sprite
+                self.get_info() 
                 self.set_sprite(x)
 
             elif self.cuad32.check_click(mouse_x,mouse_y):
                 x = self.cuad32.retornar_pos()
+                print('Matriz de Sprites')
+                self.m[x[0]-1][x[1]-1] = self.new_sprite
+                self.get_info() 
                 self.set_sprite(x)
 
             elif self.cuad33.check_click(mouse_x,mouse_y):
                 x = self.cuad33.retornar_pos()
+                print('Matriz de Sprites')
+                self.m[x[0]-1][x[1]-1] = self.new_sprite
+                self.get_info() 
                 self.set_sprite(x)
 
             elif self.cuad34.check_click(mouse_x,mouse_y):
                 x = self.cuad34.retornar_pos()
+                print('Matriz de Sprites')
+                self.m[x[0]-1][x[1]-1] = self.new_sprite
+                self.get_info() 
                 self.set_sprite(x)
 
             elif self.cuad35.check_click(mouse_x,mouse_y):
                 x = self.cuad35.retornar_pos()
+                print('Matriz de Sprites')
+                self.m[x[0]-1][x[1]-1] = self.new_sprite
+                self.get_info() 
                 self.set_sprite(x)
 
 

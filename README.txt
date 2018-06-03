@@ -9,4 +9,4 @@ Se requiere el modulo pygame instalo
 
 en caso de no tenerlo con el comando pip install pygame 
 
-si tiene pip patch already installed 
+si tiene pip patch already installed en windows 
