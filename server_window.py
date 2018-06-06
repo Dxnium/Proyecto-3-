@@ -4,6 +4,7 @@ import socket
 from button import *
 from Juego import *
 from personaje_sprite import *
+import time 
 
 class ServerWindow:
     #Jugador
@@ -31,6 +32,11 @@ class ServerWindow:
     listo_s = False
     listo_c = False
 
+    #Cursor
+    Cursor = None
+    x = 259
+    y = 100
+
     #matriz de sprites 
     m = [[None,None,None,None,None,None,None,None,None],
          [None,None,None,None,None,None,None,None,None],
@@ -43,8 +49,35 @@ class ServerWindow:
     def start(self):        
         self.set_initial_ui()
         self.start_socket_async()
+        self.start_cursor_async()
         self.player_servidor = Juego('Plants vs Zombies')
         self.player_servidor.crear_matriz()
+
+
+    def start_cursor_async(self):
+        # Se utiliza para iniciar el cursor en un hilo aparte
+        pass
+    def start_socket_async(self):
+        # Crea un hilo y le dice que ejeucte el metodo start_cursor
+        t = threading.Thread(target=self.start_cursor)
+        t.start()
+
+    def start_cursor():
+
+        pass
+    #actualiza la pantalla y dibuja los sprites para actualizarla  
+    def dibuje_sprites(self):
+        for fila in range(0,5):
+            for colum in range (0,9):
+                dato = self.m[fila][colum] 
+                if dato == None:
+                    continue
+                else:
+                    self.new_sprite = dato
+                    lista = [fila+1,colum+1]
+                    print(lista)
+                    self.set_sprite_2(lista)
+
 
     def stop(self):
         self.running = False
@@ -59,16 +92,18 @@ class ServerWindow:
             print(' ')
             for x in elemnt:
                 if x != None:
-                    print(x,',',end='')
+                    print(type(x),',',end='')
                     continue
                 print(x,',',end='')
 
     def set_initial_ui(self):
         pygame.display.set_caption('PvZ Duel - Server')
         self.surface = pygame.display.set_mode((self.width, self.height))
-        self.surface.blit(fondo_juego, (0,0))
+        # self.surface.blit(fondo_juego, (0,0))
         self.btn_done = Buttondone(1100, 160, "Listo")
-        #botones Para crear personajes 
+        #cursor
+        self.Cursor = cursor.convert_alpha()
+                #botones Para crear personajes 
         self.plata_verde = Button2(62,94,'Planta Verde')
         self.Nuez = Button2(62,235,'Nuez')
         self.zombie1 = Button2(62,376,'zombie1')
@@ -209,8 +244,10 @@ class ServerWindow:
 
     
     def btn_done_click(self):
-        if self.socket_c != None:
-            self.socket_c.send(self.player_servidor.dato.encode())
+        self.dibujese()
+        self.dibuje_sprites()
+        # if self.socket_c != None:
+        #     self.socket_c.send(self.player_servidor.dato.encode())
             
 
 
@@ -249,7 +286,7 @@ class ServerWindow:
             elif self.cuad11.check_click(mouse_x,mouse_y):
                 x = self.cuad11.retornar_pos()
                 print('Matriz de Sprites')
-                self.m[x[0]-1][x[1]-1] = self.new_sprite
+                self.m[x[1]-1][x[0]-1] = self.new_sprite
                 self.get_info() 
                 self.set_sprite(x)
 
@@ -369,13 +406,13 @@ class ServerWindow:
         
         if self.nombre == 'P004':
             self.player_servidor.set_zombie_2(x[0],x[1])
-        # self.player_servidor.set_planta_verde(x[0],x[1])
-        # print(x[0])
-        
+       
         try:
             if x[0] == 1:
                 if x[1] == 1 :
+                    print('dibujando')
                     self.new_sprite.dibujese(self.surface,259,150)
+
                 if x[1] == 2 :
                     self.new_sprite.dibujese(self.surface,259,267)
                 if x[1] == 3 :
@@ -445,6 +482,80 @@ class ServerWindow:
             print('No tiene soles')
 
  
+    def set_sprite_2(self,x):
+        try:
+            if x[0] == 1:
+                if x[1] == 1 :
+                    print('dibujando')
+                    self.new_sprite.dibujese(self.surface,259,150)
+                if x[1] == 2 :
+                    self.new_sprite.dibujese(self.surface,259,267)
+                if x[1] == 3 :
+                    self.new_sprite.dibujese(self.surface,259,381)
+                if x[1] == 4 :
+                    self.new_sprite.dibujese(self.surface,259,500)
+                if x[1] == 5 :
+                    self.new_sprite.dibujese(self.surface,259,617)
+            elif x[0]==2:
+                if x[1] == 1 :
+                    self.new_sprite.dibujese(self.surface,347,150)
+                if x[1] == 2 :
+                    self.new_sprite.dibujese(self.surface,347,267)
+                if x[1] == 3 :
+                    self.new_sprite.dibujese(self.surface,347,381)
+                if x[1] == 4 :
+                    self.new_sprite.dibujese(self.surface,347,500)
+                if x[1] == 5 :
+                    self.new_sprite.dibujese(self.surface,347,617)
+            elif x[0] == 3:
+                if x[1] == 1 :
+                    self.new_sprite.dibujese(self.surface,445,150)
+                if x[1] == 2 :
+                    self.new_sprite.dibujese(self.surface,445,267)
+                if x[1] == 3 :
+                    self.new_sprite.dibujese(self.surface,445,381)
+                if x[1] == 4 :
+                    self.new_sprite.dibujese(self.surface,445,500)
+                if x[1] == 5 :
+                    self.new_sprite.dibujese(self.surface,445,617)
+            #######################################################
+            elif x[0] == 7:
+                if x[1] == 1 :
+                    self.new_sprite.dibujese(self.surface,833,150)
+                if x[1] == 2 :
+                    self.new_sprite.dibujese(self.surface,833,267)
+                if x[1] == 3 :
+                    self.new_sprite.dibujese(self.surface,833,381)
+                if x[1] == 4 :
+                    self.new_sprite.dibujese(self.surface,833,500)
+                if x[1] == 5 :
+                    self.new_sprite.dibujese(self.surface,833,617)
+            elif x[0]==8:
+                if x[1] == 1 :
+                    self.new_sprite.dibujese(self.surface,931,150)
+                if x[1] == 2 :
+                    self.new_sprite.dibujese(self.surface,931,267)
+                if x[1] == 3 :
+                    self.new_sprite.dibujese(self.surface,931,381)
+                if x[1] == 4 :
+                    self.new_sprite.dibujese(self.surface,931,500)
+                if x[1] == 5 :
+                    self.new_sprite.dibujese(self.surface,931,617)
+            elif x[0] == 9:
+                if x[1] == 1 :
+                    self.new_sprite.dibujese(self.surface,1030,150)
+                if x[1] == 2 :
+                    self.new_sprite.dibujese(self.surface,1030,267)
+                if x[1] == 3 :
+                    self.new_sprite.dibujese(self.surface,1030,381)
+                if x[1] == 4 :
+                    self.new_sprite.dibujese(self.surface,1030,500)
+                if x[1] == 5 :
+                    self.new_sprite.dibujese(self.surface,1030,617)
+            return  1
+        except:
+            print('No tiene soles')
+
 
 
 
@@ -460,7 +571,9 @@ class ServerWindow:
 
         # Dibuja sus elementos en pantalla
     def dibujese(self):
-        print('')
+        self.surface.blit(fondo_juego, (0,0))
+        #imagen cursor
+        self.surface.blit(cursor, (self.x,self.y))
         # PRIMERO dibuja el fondo
         # self.surface.blit(self.img_fondo, self.img_fondo.get_rect())
 

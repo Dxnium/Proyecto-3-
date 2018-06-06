@@ -28,7 +28,9 @@ while running:
     elif server_window != None:
         if cont == 0:
             server_window .dibujese()
-            cont += 1 
+            cont += 1
+
+
 
     # Obtiene los eventos del usuario y se los pasa a las ventanas
     for event in pygame.event.get():      

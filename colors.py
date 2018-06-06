@@ -9,6 +9,8 @@ blue = (144,195,212)
 
 # Cargado de imagenes
 
+cursor = pygame.image.load("media/images/sun.png")
+
 fondo = pygame.image.load("media/images/wallpaper.jpg")
 
 fondo_juego = pygame.image.load("media/images/fondo_juego.jpg")
