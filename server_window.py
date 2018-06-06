@@ -275,106 +275,121 @@ class ServerWindow:
             elif self.cuad11.check_click(mouse_x,mouse_y):
                 x = self.cuad11.retornar_pos()
                 print('Matriz de Sprites')
-                self.m[x[1]-1][x[0]-1] = self.new_sprite
-                self.get_info() 
-                self.set_sprite(x)
+                if self.player_servidor.dinero != 0:
+                    self.m[x[1]-1][x[0]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad12.check_click(mouse_x,mouse_y):
                 x = self.cuad12.retornar_pos()
                 print('Matriz de Sprites')
-                self.m[x[0]-1][x[1]-1] = self.new_sprite
-                self.set_sprite(x)
+                if self.player_servidor.dinero != 0:
+                    self.m[x[0]-1][x[1]-1] = self.new_sprite
+                    self.set_sprite(x)
 
             elif self.cuad13.check_click(mouse_x,mouse_y):
                 x = self.cuad13.retornar_pos()
                 print('Matriz de Sprites')
-                self.m[x[0]-1][x[1]-1] = self.new_sprite
-                self.get_info() 
-                self.set_sprite(x)
+                if self.player_servidor.dinero != 0:
+                    self.m[x[0]-1][x[1]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad14.check_click(mouse_x,mouse_y):
                 x = self.cuad14.retornar_pos()
-                self.m[x[0]-1][x[1]-1] = self.new_sprite
-                self.get_info() 
-                self.set_sprite(x)
+                if self.player_servidor.dinero != 0:
+                    self.m[x[0]-1][x[1]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad15.check_click(mouse_x,mouse_y):
                 x = self.cuad15.retornar_pos()
                 print('Matriz de Sprites')
-                self.m[x[0]-1][x[1]-1] = self.new_sprite
-                self.get_info() 
-                self.set_sprite(x)
+                if self.player_servidor.dinero != 0:
+                    self.m[x[0]-1][x[1]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
 
             elif self.cuad21.check_click(mouse_x,mouse_y):
                 x = self.cuad21.retornar_pos()
                 print('Matriz de Sprites')
-                self.m[x[0]-1][x[1]-1] = self.new_sprite
-                self.get_info() 
-                self.set_sprite(x)
+                if self.player_servidor.dinero != 0:
+                    self.m[x[0]-1][x[1]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad22.check_click(mouse_x,mouse_y):
                 x = self.cuad22.retornar_pos()
                 print('Matriz de Sprites')
-                self.m[x[0]-1][x[1]-1] = self.new_sprite
-                self.get_info() 
-                self.set_sprite(x)
+                if self.player_servidor.dinero != 0:
+                    self.m[x[0]-1][x[1]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad23.check_click(mouse_x,mouse_y):
                 x = self.cuad23.retornar_pos()
                 print('Matriz de Sprites')
-                self.m[x[0]-1][x[1]-1] = self.new_sprite
-                self.get_info() 
-                self.set_sprite(x)
+                if self.player_servidor.dinero != 0:
+                    self.m[x[0]-1][x[1]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad24.check_click(mouse_x,mouse_y):
                 x = self.cuad24.retornar_pos()
                 print('Matriz de Sprites')
-                self.m[x[0]-1][x[1]-1] = self.new_sprite
-                self.get_info() 
-                self.set_sprite(x)
+                if self.player_servidor.dinero != 0:
+                    self.m[x[0]-1][x[1]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad25.check_click(mouse_x,mouse_y):
                 x = self.cuad25.retornar_pos()
                 print('Matriz de Sprites')
-                self.m[x[0]-1][x[1]-1] = self.new_sprite
-                self.get_info() 
-                self.set_sprite(x)
+                if self.player_servidor.dinero != 0:
+                    self.m[x[0]-1][x[1]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad31.check_click(mouse_x,mouse_y):
                 x = self.cuad31.retornar_pos()
                 print('Matriz de Sprites')
-                self.m[x[0]-1][x[1]-1] = self.new_sprite
-                self.get_info() 
-                self.set_sprite(x)
+                if self.player_servidor.dinero != 0:
+                    self.m[x[0]-1][x[1]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad32.check_click(mouse_x,mouse_y):
                 x = self.cuad32.retornar_pos()
                 print('Matriz de Sprites')
-                self.m[x[0]-1][x[1]-1] = self.new_sprite
-                self.get_info() 
-                self.set_sprite(x)
+                if self.player_servidor.dinero != 0:
+                    self.m[x[0]-1][x[1]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad33.check_click(mouse_x,mouse_y):
                 x = self.cuad33.retornar_pos()
                 print('Matriz de Sprites')
-                self.m[x[0]-1][x[1]-1] = self.new_sprite
-                self.get_info() 
-                self.set_sprite(x)
+                if self.player_servidor.dinero != 0:
+                    self.m[x[0]-1][x[1]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad34.check_click(mouse_x,mouse_y):
                 x = self.cuad34.retornar_pos()
                 print('Matriz de Sprites')
-                self.m[x[0]-1][x[1]-1] = self.new_sprite
-                self.get_info() 
-                self.set_sprite(x)
+                if self.player_servidor.dinero != 0:
+                    self.m[x[0]-1][x[1]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad35.check_click(mouse_x,mouse_y):
                 x = self.cuad35.retornar_pos()
                 print('Matriz de Sprites')
-                self.m[x[0]-1][x[1]-1] = self.new_sprite
-                self.get_info() 
-                self.set_sprite(x)
+                if self.player_servidor.dinero != 0:
+                    self.m[x[0]-1][x[1]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
 
 
@@ -384,91 +399,92 @@ class ServerWindow:
 
 
     def set_sprite(self,x):
-        print('Creando personaje')
-        if self.nombre =='P001':
-            self.player_servidor.set_planta_verde(x[0],x[1])
-        if self.nombre == 'P002':
-            self.player_servidor.set_nuez(x[0],x[1])
-        
-        if self.nombre == 'P003':
-            self.player_servidor.set_zombie(x[0],x[1])
-        
-        if self.nombre == 'P004':
-            self.player_servidor.set_zombie_2(x[0],x[1])
-       
-        try:
-            if x[0] == 1:
-                if x[1] == 1 :
-                    print('dibujando')
-                    self.new_sprite.dibujese(self.surface,259,150)
+        if self.player_servidor.dinero != 0:
+            print('Creando personaje')
+            if self.nombre =='P001':
+                self.player_servidor.set_planta_verde(x[0],x[1])
+            if self.nombre == 'P002':
+                self.player_servidor.set_nuez(x[0],x[1])
+            
+            if self.nombre == 'P003':
+                self.player_servidor.set_zombie(x[0],x[1])
+            
+            if self.nombre == 'P004':
+                self.player_servidor.set_zombie_2(x[0],x[1])
+           
+            try:
+                if x[0] == 1:
+                    if x[1] == 1 :
+                        print('dibujando')
+                        self.new_sprite.dibujese(self.surface,259,150)
 
-                if x[1] == 2 :
-                    self.new_sprite.dibujese(self.surface,259,267)
-                if x[1] == 3 :
-                    self.new_sprite.dibujese(self.surface,259,381)
-                if x[1] == 4 :
-                    self.new_sprite.dibujese(self.surface,259,500)
-                if x[1] == 5 :
-                    self.new_sprite.dibujese(self.surface,259,617)
-            elif x[0]==2:
-                if x[1] == 1 :
-                    self.new_sprite.dibujese(self.surface,347,150)
-                if x[1] == 2 :
-                    self.new_sprite.dibujese(self.surface,347,267)
-                if x[1] == 3 :
-                    self.new_sprite.dibujese(self.surface,347,381)
-                if x[1] == 4 :
-                    self.new_sprite.dibujese(self.surface,347,500)
-                if x[1] == 5 :
-                    self.new_sprite.dibujese(self.surface,347,617)
-            elif x[0] == 3:
-                if x[1] == 1 :
-                    self.new_sprite.dibujese(self.surface,445,150)
-                if x[1] == 2 :
-                    self.new_sprite.dibujese(self.surface,445,267)
-                if x[1] == 3 :
-                    self.new_sprite.dibujese(self.surface,445,381)
-                if x[1] == 4 :
-                    self.new_sprite.dibujese(self.surface,445,500)
-                if x[1] == 5 :
-                    self.new_sprite.dibujese(self.surface,445,617)
-            #######################################################
-            elif x[0] == 7:
-                if x[1] == 1 :
-                    self.new_sprite.dibujese(self.surface,833,150)
-                if x[1] == 2 :
-                    self.new_sprite.dibujese(self.surface,833,267)
-                if x[1] == 3 :
-                    self.new_sprite.dibujese(self.surface,833,381)
-                if x[1] == 4 :
-                    self.new_sprite.dibujese(self.surface,833,500)
-                if x[1] == 5 :
-                    self.new_sprite.dibujese(self.surface,833,617)
-            elif x[0]==8:
-                if x[1] == 1 :
-                    self.new_sprite.dibujese(self.surface,931,150)
-                if x[1] == 2 :
-                    self.new_sprite.dibujese(self.surface,931,267)
-                if x[1] == 3 :
-                    self.new_sprite.dibujese(self.surface,931,381)
-                if x[1] == 4 :
-                    self.new_sprite.dibujese(self.surface,931,500)
-                if x[1] == 5 :
-                    self.new_sprite.dibujese(self.surface,931,617)
-            elif x[0] == 9:
-                if x[1] == 1 :
-                    self.new_sprite.dibujese(self.surface,1030,150)
-                if x[1] == 2 :
-                    self.new_sprite.dibujese(self.surface,1030,267)
-                if x[1] == 3 :
-                    self.new_sprite.dibujese(self.surface,1030,381)
-                if x[1] == 4 :
-                    self.new_sprite.dibujese(self.surface,1030,500)
-                if x[1] == 5 :
-                    self.new_sprite.dibujese(self.surface,1030,617)
-            return  1
-        except:
-            print('No tiene soles')
+                    if x[1] == 2 :
+                        self.new_sprite.dibujese(self.surface,259,267)
+                    if x[1] == 3 :
+                        self.new_sprite.dibujese(self.surface,259,381)
+                    if x[1] == 4 :
+                        self.new_sprite.dibujese(self.surface,259,500)
+                    if x[1] == 5 :
+                        self.new_sprite.dibujese(self.surface,259,617)
+                elif x[0]==2:
+                    if x[1] == 1 :
+                        self.new_sprite.dibujese(self.surface,347,150)
+                    if x[1] == 2 :
+                        self.new_sprite.dibujese(self.surface,347,267)
+                    if x[1] == 3 :
+                        self.new_sprite.dibujese(self.surface,347,381)
+                    if x[1] == 4 :
+                        self.new_sprite.dibujese(self.surface,347,500)
+                    if x[1] == 5 :
+                        self.new_sprite.dibujese(self.surface,347,617)
+                elif x[0] == 3:
+                    if x[1] == 1 :
+                        self.new_sprite.dibujese(self.surface,445,150)
+                    if x[1] == 2 :
+                        self.new_sprite.dibujese(self.surface,445,267)
+                    if x[1] == 3 :
+                        self.new_sprite.dibujese(self.surface,445,381)
+                    if x[1] == 4 :
+                        self.new_sprite.dibujese(self.surface,445,500)
+                    if x[1] == 5 :
+                        self.new_sprite.dibujese(self.surface,445,617)
+                #######################################################
+                elif x[0] == 7:
+                    if x[1] == 1 :
+                        self.new_sprite.dibujese(self.surface,833,150)
+                    if x[1] == 2 :
+                        self.new_sprite.dibujese(self.surface,833,267)
+                    if x[1] == 3 :
+                        self.new_sprite.dibujese(self.surface,833,381)
+                    if x[1] == 4 :
+                        self.new_sprite.dibujese(self.surface,833,500)
+                    if x[1] == 5 :
+                        self.new_sprite.dibujese(self.surface,833,617)
+                elif x[0]==8:
+                    if x[1] == 1 :
+                        self.new_sprite.dibujese(self.surface,931,150)
+                    if x[1] == 2 :
+                        self.new_sprite.dibujese(self.surface,931,267)
+                    if x[1] == 3 :
+                        self.new_sprite.dibujese(self.surface,931,381)
+                    if x[1] == 4 :
+                        self.new_sprite.dibujese(self.surface,931,500)
+                    if x[1] == 5 :
+                        self.new_sprite.dibujese(self.surface,931,617)
+                elif x[0] == 9:
+                    if x[1] == 1 :
+                        self.new_sprite.dibujese(self.surface,1030,150)
+                    if x[1] == 2 :
+                        self.new_sprite.dibujese(self.surface,1030,267)
+                    if x[1] == 3 :
+                        self.new_sprite.dibujese(self.surface,1030,381)
+                    if x[1] == 4 :
+                        self.new_sprite.dibujese(self.surface,1030,500)
+                    if x[1] == 5 :
+                        self.new_sprite.dibujese(self.surface,1030,617)
+                return  1
+            except:
+                print('No tiene soles')
 
  
     def set_sprite_2(self,x):
@@ -544,7 +560,8 @@ class ServerWindow:
             return  1
         except:
             print('No tiene soles')
-
+        else:
+            print('No dinero')
 
 
 
@@ -560,9 +577,28 @@ class ServerWindow:
 
         # Dibuja sus elementos en pantalla
     def dibujese(self):
+        #Primero dibuja el fondo 
         self.surface.blit(fondo_juego, (0,0))
+        #LUEGO DIBUJA LO DEMAS 
         #imagen cursor
-        self.surface.blit(cursor, (self.x,self.y))
+        if self.player_servidor.dinero != 0:
+            self.surface.blit(cursor, (self.x,self.y))
+        else:
+            self.surface.blit(cursor2, (self.x,self.y))
+        #Label soles
+        font = pygame.font.Font(None, 70)
+        font_color = (0,0,0)
+        monedas = font.render(str(self.player_servidor.dinero), True, font_color)
+        monedas_rect = monedas.get_rect()
+        self.surface.blit(monedas, (345,45))
+        #Label Turno 
+        font = pygame.font.Font(None, 70)
+        font_color = (0,0,0)
+        turno = font.render('1', True, font_color)
+        turno_rect = turno.get_rect()
+        self.surface.blit(turno, (870,40))
+
+
         # PRIMERO dibuja el fondo
         # self.surface.blit(self.img_fondo, self.img_fondo.get_rect())
 

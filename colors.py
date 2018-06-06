@@ -2,6 +2,7 @@ import pygame
 
 
 
+
 black = (0,0,0)
 white = (255,255,255)
 red = (21,149,191)
@@ -9,7 +10,9 @@ blue = (144,195,212)
 
 # Cargado de imagenes
 
-cursor = pygame.image.load("media/images/sun.png")
+cursor = pygame.image.load("media/images/sun_small.png")
+
+cursor2 = pygame.image.load("media/images/sun_red.png")
 
 fondo = pygame.image.load("media/images/wallpaper.jpg")
 

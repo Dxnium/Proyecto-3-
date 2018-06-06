@@ -32,7 +32,7 @@ while running:
 
 
 
-    # Obtiene los eventos del usuario y se los pasa a las ventanas
+    # Obtiself.surface.blit(cursor, (self.x,self.y))ene los eventos del usuario y se los pasa a las ventanas
     for event in pygame.event.get():      
 
         # Si es el evento de quit, cierra los sockets y las ventantas
