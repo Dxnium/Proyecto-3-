@@ -35,7 +35,8 @@ class ServerWindow:
     #Cursor
     Cursor = None
     x = 259
-    y = 100
+    y = 230
+    velocidad = 50
 
     #matriz de sprites 
     m = [[None,None,None,None,None,None,None,None,None],
@@ -49,22 +50,10 @@ class ServerWindow:
     def start(self):        
         self.set_initial_ui()
         self.start_socket_async()
-        self.start_cursor_async()
         self.player_servidor = Juego('Plants vs Zombies')
         self.player_servidor.crear_matriz()
 
 
-    def start_cursor_async(self):
-        # Se utiliza para iniciar el cursor en un hilo aparte
-        pass
-    def start_socket_async(self):
-        # Crea un hilo y le dice que ejeucte el metodo start_cursor
-        t = threading.Thread(target=self.start_cursor)
-        t.start()
-
-    def start_cursor():
-
-        pass
     #actualiza la pantalla y dibuja los sprites para actualizarla  
     def dibuje_sprites(self):
         for fila in range(0,5):

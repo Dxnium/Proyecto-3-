@@ -42,6 +42,24 @@ while running:
                 server_window.stop()
             if client_window != None:
                 client_window.stop()
+        if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    server_window.x-=server_window.velocidad
+                    server_window.dibujese()
+                    server_window.dibuje_sprites()
+                if event.key == pygame.K_RIGHT:
+                    server_window.x+=server_window.velocidad
+                    server_window.dibujese()
+                    server_window.dibuje_sprites()
+                if event.key== pygame.K_UP:
+                    server_window.y-=server_window.velocidad
+                    server_window.dibujese()
+                    server_window.dibuje_sprites()
+                if event.key == pygame.K_DOWN:
+                    server_window.y+=server_window.velocidad
+                    server_window.dibujese()
+                    server_window.dibuje_sprites()
+
 
         # En caso de que sea otro tipo de evento
         else:
