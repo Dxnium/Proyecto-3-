@@ -36,7 +36,7 @@ class ServerWindow:
     Cursor = None
     x = 259
     y = 230
-    velocidad = 50
+    velocidad = 20
 
     #matriz de sprites 
     m = [[None,None,None,None,None,None,None,None,None],
@@ -233,10 +233,8 @@ class ServerWindow:
 
     
     def btn_done_click(self):
-        self.dibujese()
-        self.dibuje_sprites()
-        # if self.socket_c != None:
-        #     self.socket_c.send(self.player_servidor.dato.encode())
+        if self.socket_c != None:
+            self.socket_c.send(self.player_servidor.dato.encode())
             
 
 

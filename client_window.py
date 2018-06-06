@@ -23,6 +23,19 @@ class ClientWindow:
     #sprite 
     new_sprite = None
     nombre = None
+
+    #Cursor
+    Cursor = None
+    x = 259
+    y = 230
+    velocidad = 50
+
+    #matriz de sprites 
+    m = [[None,None,None,None,None,None,None,None,None],
+         [None,None,None,None,None,None,None,None,None],
+         [None,None,None,None,None,None,None,None,None],
+         [None,None,None,None,None,None,None,None,None],
+         [None,None,None,None,None,None,None,None,None]]
         
          
     def start(self):
@@ -30,6 +43,29 @@ class ClientWindow:
         self.start_socket_async()
         self.player_client = Juego('Plants vs Zombies',False)
         self.player_client.crear_matriz()
+
+    #dibuja los sprites en la pantalla 
+    def dibuje_sprites(self):
+        for fila in range(0,5):
+            for colum in range (0,9):
+                dato = self.m[fila][colum] 
+                if dato == None:
+                    continue
+                else:
+                    self.new_sprite = dato
+                    lista = [colum+1,fila+1]
+                    print(lista)
+                    self.set_sprite_2(lista)
+
+    #get info para la matriz de sprites 
+    def get_info(self):
+        for elemnt in self.m:
+            print(' ')
+            for x in elemnt:
+                if x != None:
+                    print(type(x),',',end='')
+                    continue
+                print(x,',',end='')
 
     #detiene todo y cierra la ventana 
     def stop(self):
@@ -39,8 +75,10 @@ class ClientWindow:
     def set_initial_ui(self):
         pygame.display.set_caption('PvZ Duel - Client')
         self.surface = pygame.display.set_mode((self.width,self.height))
-        self.surface.blit(fondo_juego, (0,0))
+        # self.surface.blit(fondo_juego, (0,0))
         self.btn_done = Buttondone(1100, 160, "Listo")
+        #cursor
+        self.Cursor = cursor.convert_alpha()
         #botones Para crear personajes 
         self.plata_verde = Button2(62,94,'Planta Verde')
         self.Nuez = Button2(62,235,'Nuez')
@@ -67,8 +105,7 @@ class ClientWindow:
         t = threading.Thread(target=self.start_socket)
         t.start()
 
-    def start_socket(self):
-        
+    def start_socket(self): 
         self.socket_c = socket.socket()
         #toma la ip a la que va a concetar 
         #self.socket_c.connect((ip, 5507))
@@ -211,64 +248,109 @@ class ClientWindow:
             
             elif self.cuad71.check_click(mouse_x,mouse_y):
                 x = self.cuad71.retornar_pos()
-                self.set_sprite(x)
+                if self.player_client.dinero != 0:
+                    self.m[x[1]-1][x[0]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad72.check_click(mouse_x,mouse_y):
                 x = self.cuad72.retornar_pos()
-                self.set_sprite(x)
+                if self.player_client.dinero != 0:
+                    self.m[x[1]-1][x[0]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad73.check_click(mouse_x,mouse_y):
                 x = self.cuad73.retornar_pos()
-                self.set_sprite(x)
+                if self.player_client.dinero != 0:
+                    self.m[x[1]-1][x[0]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad74.check_click(mouse_x,mouse_y):
                 x = self.cuad74.retornar_pos()
-                self.set_sprite(x)
+                if self.player_client.dinero != 0:
+                    self.m[x[1]-1][x[0]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad75.check_click(mouse_x,mouse_y):
                 x = self.cuad75.retornar_pos()
-                self.set_sprite(x)
+                if self.player_client.dinero != 0:
+                    self.m[x[1]-1][x[0]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
 
             elif self.cuad81.check_click(mouse_x,mouse_y):
                 x = self.cuad81.retornar_pos()
-                self.set_sprite(x)
+                if self.player_client.dinero != 0:
+                    self.m[x[1]-1][x[0]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad82.check_click(mouse_x,mouse_y):
                 x = self.cuad82.retornar_pos()
-                self.set_sprite(x)
+                if self.player_client.dinero != 0:
+                    self.m[x[1]-1][x[0]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad83.check_click(mouse_x,mouse_y):
                 x = self.cuad83.retornar_pos()
-                self.set_sprite(x)
+                if self.player_client.dinero != 0:
+                    self.m[x[1]-1][x[0]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad84.check_click(mouse_x,mouse_y):
                 x = self.cuad84.retornar_pos()
-                self.set_sprite(x)
+                if self.player_client.dinero != 0:
+                    self.m[x[1]-1][x[0]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad85.check_click(mouse_x,mouse_y):
                 x = self.cuad85.retornar_pos()
-                self.set_sprite(x)
+                if self.player_client.dinero != 0:
+                    self.m[x[1]-1][x[0]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad91.check_click(mouse_x,mouse_y):
                 x = self.cuad91.retornar_pos()
-                self.set_sprite(x)
+                if self.player_client.dinero != 0:
+                    self.m[x[1]-1][x[0]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad92.check_click(mouse_x,mouse_y):
                 x = self.cuad92.retornar_pos()
-                self.set_sprite(x)
+                if self.player_client.dinero != 0:
+                    self.m[x[1]-1][x[0]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad93.check_click(mouse_x,mouse_y):
                 x = self.cuad93.retornar_pos()
-                self.set_sprite(x)
+                if self.player_client.dinero != 0:
+                    self.m[x[1]-1][x[0]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad94.check_click(mouse_x,mouse_y):
                 x = self.cuad94.retornar_pos()
-                self.set_sprite(x)
+                if self.player_client.dinero != 0:
+                    self.m[x[1]-1][x[0]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
 
             elif self.cuad95.check_click(mouse_x,mouse_y):
                 x = self.cuad95.retornar_pos()
-                self.set_sprite(x)
+                if self.player_client.dinero != 0:
+                    self.m[x[1]-1][x[0]-1] = self.new_sprite
+                    self.get_info() 
+                    self.set_sprite(x)
     #dibuja los sprites en la pantalla 
     def set_sprite(self,x):
         print('Creando personaje')
@@ -356,17 +438,102 @@ class ClientWindow:
         except:
             print('No tiene soles')
 
+    def set_sprite_2(self,x):
+        try:
+            if x[0] == 1:
+                if x[1] == 1 :
+                    print('dibujando')
+                    self.new_sprite.dibujese(self.surface,259,150)
+                if x[1] == 2 :
+                    self.new_sprite.dibujese(self.surface,259,267)
+                if x[1] == 3 :
+                    self.new_sprite.dibujese(self.surface,259,381)
+                if x[1] == 4 :
+                    self.new_sprite.dibujese(self.surface,259,500)
+                if x[1] == 5 :
+                    self.new_sprite.dibujese(self.surface,259,617)
+            elif x[0]==2:
+                if x[1] == 1 :
+                    self.new_sprite.dibujese(self.surface,347,150)
+                if x[1] == 2 :
+                    self.new_sprite.dibujese(self.surface,347,267)
+                if x[1] == 3 :
+                    self.new_sprite.dibujese(self.surface,347,381)
+                if x[1] == 4 :
+                    self.new_sprite.dibujese(self.surface,347,500)
+                if x[1] == 5 :
+                    self.new_sprite.dibujese(self.surface,347,617)
+            elif x[0] == 3:
+                if x[1] == 1 :
+                    self.new_sprite.dibujese(self.surface,445,150)
+                if x[1] == 2 :
+                    self.new_sprite.dibujese(self.surface,445,267)
+                if x[1] == 3 :
+                    self.new_sprite.dibujese(self.surface,445,381)
+                if x[1] == 4 :
+                    self.new_sprite.dibujese(self.surface,445,500)
+                if x[1] == 5 :
+                    self.new_sprite.dibujese(self.surface,445,617)
+            #######################################################
+            elif x[0] == 7:
+                print('hola desde el 7')
+                if x[1] == 1 :
+                    self.new_sprite.dibujese(self.surface,833,150)
+                if x[1] == 2 :
+                    self.new_sprite.dibujese(self.surface,833,267)
+                if x[1] == 3 :
+                    self.new_sprite.dibujese(self.surface,833,381)
+                if x[1] == 4 :
+                    self.new_sprite.dibujese(self.surface,833,500)
+                if x[1] == 5 :
+                    self.new_sprite.dibujese(self.surface,833,617)
+            elif x[0]==8:
+                if x[1] == 1 :
+                    self.new_sprite.dibujese(self.surface,931,150)
+                if x[1] == 2 :
+                    self.new_sprite.dibujese(self.surface,931,267)
+                if x[1] == 3 :
+                    self.new_sprite.dibujese(self.surface,931,381)
+                if x[1] == 4 :
+                    self.new_sprite.dibujese(self.surface,931,500)
+                if x[1] == 5 :
+                    self.new_sprite.dibujese(self.surface,931,617)
+            elif x[0] == 9:
+                if x[1] == 1 :
+                    self.new_sprite.dibujese(self.surface,1030,150)
+                if x[1] == 2 :
+                    self.new_sprite.dibujese(self.surface,1030,267)
+                if x[1] == 3 :
+                    self.new_sprite.dibujese(self.surface,1030,381)
+                if x[1] == 4 :
+                    self.new_sprite.dibujese(self.surface,1030,500)
+                if x[1] == 5 :
+                    self.new_sprite.dibujese(self.surface,1030,617)
+            print('nada')
+            return  1
+        except:
+            print('No tiene soles')
+        else:
+            print('No dinero')
+
         # Dibuja sus elementos en pantalla
     def dibujese(self):
-        print('')
         # PRIMERO dibuja el fondo
-        
-
-        # DESPUES dibuja lo demas
-        # self.btn_done.draw(self.surface) # Boton de listo
-
-        # #Crear botones para selecionar personajes 
-        # self.plata_verde.draw(self.surface)
-        # self.Nuez.draw(self.surface)
-        # self.zombie2.draw(self.surface)
-        # self.zombie1.draw(self.surface)
+        self.surface.blit(fondo_juego, (0,0))
+        #imagen cursor
+        if self.player_client.dinero != 0:
+            self.surface.blit(cursor, (self.x,self.y))
+        else:
+            self.surface.blit(cursor2, (self.x,self.y))
+        #Label soles
+        font = pygame.font.Font(None, 70)
+        font_color = (0,0,0)
+        monedas = font.render(str(self.player_client.dinero), True, font_color)
+        monedas_rect = monedas.get_rect()
+        self.surface.blit(monedas, (345,45))
+        #Label Turno 
+        font = pygame.font.Font(None, 70)
+        font_color = (0,0,0)
+        turno = font.render('1', True, font_color)
+        turno_rect = turno.get_rect()
+        self.surface.blit(turno, (870,40))
