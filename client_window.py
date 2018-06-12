@@ -25,10 +25,12 @@ class ClientWindow:
     nombre = None
 
     #Cursor
+    x_matriz = 1
+    y_matriz = 9
     Cursor = None
-    x = 259
-    y = 230
-    velocidad = 50
+    x = 1050
+    y = 125
+    velocidad = 100
 
     #matriz de sprites 
     m = [[None,None,None,None,None,None,None,None,None],
@@ -110,8 +112,8 @@ class ClientWindow:
         #toma la ip a la que va a concetar 
         #self.socket_c.connect((ip, 5507))
         #Porner manualmente la ip del servidor 
-        #self.socket_c.connect((socket.gethostbyname(socket.gethostname()), 5507))
-        self.socket_c.connect(("192.168.43.77", 5507))
+        self.socket_c.connect((socket.gethostbyname(socket.gethostname()), 5507))
+        # self.socket_c.connect(("192.168.43.77", 5507))
         while self.running:
             read = self.socket_c.recv(1024).decode()
             self.player_client.dato_rec = read

@@ -33,10 +33,12 @@ class ServerWindow:
     listo_c = False
 
     #Cursor
+    x_matriz = 1
+    y_matriz = 1
     Cursor = None
     x = 259
-    y = 230
-    velocidad = 20
+    y = 125
+    velocidad = 100
 
     #matriz de sprites 
     m = [[None,None,None,None,None,None,None,None,None],
@@ -204,28 +206,28 @@ class ServerWindow:
             self.new_sprite = PersonajeSprite("media/images/verdeF.png")
             lista = [c,f]
             print(lista)
-            self.m[f][c] = self.new_sprite
+            self.m[f-1][c-1] = self.new_sprite
             self.set_sprite(lista)
 
         if nombre == 'P002' :
             self.new_sprite = PersonajeSprite("media/images/nuezF.png")
             lista = [c,f]
             print(lista)
-            self.m[f][c] = self.new_sprite
+            self.m[f-1][c-1] = self.new_sprite
             self.set_sprite(lista)
 
         if nombre == 'P003'  :
             self.new_sprite = PersonajeSprite("media/images/zombie1F.png")
             lista = [c,f]
             print(lista)
-            self.m[f][c] = self.new_sprite
+            self.m[f-1][c-1] = self.new_sprite
             self.set_sprite(lista)
 
         if nombre == 'P004':
             self.new_sprite = PersonajeSprite("media/images/zombie2F.png")
             lista = [c,f]
             print(lista)
-            self.m[f][c] = self.new_sprite
+            self.m[f-1][c-1] = self.new_sprite
             self.set_sprite(lista)
         else:
             return None
@@ -398,8 +400,8 @@ class ServerWindow:
 
     def set_sprite(self,x):
         if self.player_servidor.dinero != 0:
-            print('Creando personaje')
             if self.nombre =='P001':
+                print('hola desde el dinero')
                 self.player_servidor.set_planta_verde(x[0],x[1])
             if self.nombre == 'P002':
                 self.player_servidor.set_nuez(x[0],x[1])
