@@ -14,7 +14,7 @@ class PersonajeSprite(pygame.sprite.Sprite):
 		self.image = pygame.image.load(imagen_url)
 		self.rect = self.image.get_rect()
 				
-
+#dibuja los sprites en sl surface
 	def dibujese(self,surface,x,y):
 		self.rect.centerx = x
 		self.rect.centery = y

@@ -1,3 +1,8 @@
+##########################################################33
+
+#Script de prueba para mover sprites 
+
+######################################################
 import pygame
 from colors import *
 class Player(pygame.sprite.Sprite):

@@ -32,13 +32,13 @@ class Personajes:
         self.costo = costo
         self.url = url
 
-
+#da la posicion en la que se debe colocar en la matriz 
     def posicion(self):
         if self.m[self.f-1][self.c-1] == None:
             self.m[self.f-1][self.c-1] = self
         else:
             print('Ya esta ocupado')
-
+#para el movimiento da la nueva ubicacion 
     def new_ubicacion(self):
         if self.jugador == True: #es servidor -->
             self.c = self.c + self.movimiento
@@ -46,7 +46,7 @@ class Personajes:
         else:
             self.c = self.c - self.movimiento #es cliente <--
             print('Nueva ubicacion: ','C:', self.c ,',','F:', self.f)
-        
+  #mueve la instancia en la matriz de perosnajes       
     def mover(self):
         if self.jugador == True: #es servidor -->
             if (self.c-1)+self.movimiento > 8:
@@ -61,7 +61,7 @@ class Personajes:
             self.new_ubicacion()
             self.m[self.f-1][self.c-1]=self
             
-
+#devuelve la matriz de personajes 
     def get_info(self):
         for elemnt in self.m:
             print(' ')
@@ -114,7 +114,8 @@ class Personajes:
                     if element.c == lugar+1 or element.c == lugar-1:
                         return 1
         return 2
-
+#hace un ataque de planta 
+#baja la vida 
     def ataque_verde(self):
         fila = self.f
         for element in matriz[fila]:
@@ -126,7 +127,8 @@ class Personajes:
                         element.pts_vida -= self.pts_atq
                         verificar_vida()
                         return
-
+#hace un ataque de zombie 
+#baja la vida 
     def ataque_zombie(self):
         fila = self.f
         lugar = self.c

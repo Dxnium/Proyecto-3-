@@ -21,11 +21,12 @@ class Juego:
         self.nombre = nombre
         self.jugador = jugador
 
-        
+    #crea la mtriz donde se van a meter las instancias de personajes 
     def crear_matriz(self):
             self.Matriz = Personajes('Matriz',0,0,'Matiz',True,0,0,0,0,None)
 
-
+#mueve lo elementos de la matriz
+#se mueven de acuerdo a los argumentos establecidos en la clase perosnjae
     def mover_matriz(self):
         for elemnt in self.Matriz.m:
             tmp = None
@@ -68,7 +69,7 @@ class Juego:
                     continue
             print(4,nombre)
             self.crear_personaje_aux(nombre, c, f, jugador)
-
+#funcion aux para crear personaje 
     def crear_personaje_aux(self, nombre, c, f, jugador):
         if nombre == "P001":
             self.set_planta_verde_socket(c, f, jugador)
@@ -110,12 +111,12 @@ class Juego:
                     print('hola')
                     self.dato+=("P001;"+str(f)+";"+str(c)+";"+"False,")
 
-
+#crea la instancia de una planta del socket 
     def set_planta_verde_socket(self, f, c, jugador):
         planta = Personajes('Verde',100,25,'P001',jugador,f,c,0,25, None)
         planta.posicion()
         planta.get_info()
-
+#crea la instancia de un personaje de set nuez 
     def set_nuez(self,c,f):
         if self.dinero < 25:
             print('no tiene dinero')
@@ -139,13 +140,13 @@ class Juego:
                     self.perosnaje.posicion()
                     self.perosnaje.get_info()
                     self.dato+=("P002;"+str(f)+";"+str(c)+";"+"False,")
-
+#crea la instancia de un personaje de set nuez 
     def set_nuez_aux(self, f, c, jugador):
         planta = Personajes('Nuez',200,0,'P002',self.jugador,f,c,0,25, None)
         # self.dato += ','+planta.tipo
         planta.posicion()
         planta.get_info()
-
+#crea la instancia de un personaje de zombie  
     def set_zombie(self,c,f):
         if self.dinero < 25:
             print('no tiene dinero')
@@ -169,12 +170,12 @@ class Juego:
                     self.perosnaje.posicion()
                     self.perosnaje.get_info()
                     self.dato+=("P003;"+str(f)+";"+str(c)+";"+"False,")
-            
+ #crea la instancia de un personaje de zombie           
     def set_zombie_socket(self, f, c, jugador):
         zombie = Personajes('Zombie',100,20,'P002',self.jugador,f,c,1,25, None)
         zombie.posicion()
         zombie.get_info()
-
+#crea la instancia de un personaje de zombie  
     def set_zombie_2(self,c,f):
         if self.dinero < 25:
             print('no tiene dinero')
@@ -198,7 +199,7 @@ class Juego:
                     self.perosnaje.posicion()
                     self.perosnaje.get_info()
                     self.dato+=("P004;"+str(f)+";"+str(c)+";"+"False,")
-
+#crea la instancia de un personaje de zombie 
     def set_zombie_2_socket(self, f, c, jugador):
         zombie = Personajes('Zombie Alien',100,20,'P003',self.jugador,f,c,1,25, None)
         zombie.posicion()
