@@ -102,11 +102,11 @@ class ClientWindow:
         self.cuad93 = Button3(980,368,'9,3', 9, 3)
         self.cuad94 = Button3(980,485,'9,4', 9, 4)
         self.cuad95 = Button3(980,602,'9,5', 9, 5)
-
+# Se utiliza para iniciar el socket en un hilo aparte
     def start_socket_async(self):
         t = threading.Thread(target=self.start_socket)
         t.start()
-
+   # Crea un socket. Espera la conexion de un cliente. Lee constantemente de la conexion realizada.
     def start_socket(self): 
         self.socket_c = socket.socket()
         #toma la ip a la que va a concetar 
@@ -194,7 +194,7 @@ class ClientWindow:
 
 
 
-
+#manda los datos que tenga gurdados por el socket 
     def btn_done_click(self):
         if self.socket_c != None:
             self.socket_c.send(self.player_client.dato.encode())
@@ -215,7 +215,10 @@ class ClientWindow:
     #             self.btn_done_click()                
     #             return 1
     #     return 0
-
+#loop que revisa constantemente si se presiona un boton en la pantalla 
+# crea instancias sprites y las gurda en sus atributos  
+#manda a colocar el sprite que busca lo que hay guardado en los atributos 
+#y con la posicion de del boton coloca el sprite 
     def main_loop_event(self, event):
         mouse_x = pygame.mouse.get_pos()[0]
         mouse_y = pygame.mouse.get_pos()[1]

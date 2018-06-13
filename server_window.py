@@ -69,7 +69,7 @@ class ServerWindow:
                     print(lista)
                     self.set_sprite_2(lista)
 
-
+    #detiene la comunicacion con el socket 
     def stop(self):
         self.running = False
         if self.socket_s != None:
@@ -86,7 +86,8 @@ class ServerWindow:
                     print(type(x),',',end='')
                     continue
                 print(x,',',end='')
-
+#inicia toda la parte visual 
+#crea el fondo y botnes invisibles 
     def set_initial_ui(self):
         pygame.display.set_caption('PvZ Duel - Server')
         self.surface = pygame.display.set_mode((self.width, self.height))
@@ -198,12 +199,14 @@ class ServerWindow:
                     jugador = bool(elem2)
                     continue
             self.sprite_socket(nombre,c,f)
-
+#toma los datos que le envia personaje socket ya separados 
+#y crea las instancias y coloca los sprites 
     def sprite_socket(self,nombre,c,f):
         print('Creando personaje')
         if nombre =='P001':
             print('Planta Verde')
             self.new_sprite = PersonajeSprite("media/images/verdeF.png")
+            print(c,f)
             lista = [c,f]
             print(lista)
             self.m[f-1][c-1] = self.new_sprite
@@ -233,13 +236,16 @@ class ServerWindow:
             return None
 
 
-    
+ #manda los datos que tenga gurdados por el socket    
     def btn_done_click(self):
         if self.socket_c != None:
             self.socket_c.send(self.player_servidor.dato.encode())
             
 
-
+#loop que revisa constantemente si se presiona un boton en la pantalla 
+# crea instancias sprites y las gurda en sus atributos  
+#manda a colocar el sprite que busca lo que hay guardado en los atributos 
+#y con la posicion de del boton coloca el sprite 
     def main_loop_event(self, event):
         mouse_x = pygame.mouse.get_pos()[0]
         mouse_y = pygame.mouse.get_pos()[1]
@@ -397,9 +403,13 @@ class ServerWindow:
 
 
 
+# fucnicon para colocar los sprites en pantalla 
 
     def set_sprite(self,x):
+        #si tiene dinero puede crear sprites 
         if self.player_servidor.dinero != 0:
+        #dependiendo del nombre que este en los atributos 
+        #crea la instancia correspondiente 
             if self.nombre =='P001':
                 print('hola desde el dinero')
                 self.player_servidor.set_planta_verde(x[0],x[1])
@@ -413,6 +423,8 @@ class ServerWindow:
                 self.player_servidor.set_zombie_2(x[0],x[1])
            
             try:
+                #con la posicion que le manda el boton x que una lista con [c,f]
+                #coloca el sprite en la pantalla 
                 if x[0] == 1:
                     if x[1] == 1 :
                         print('dibujando')
@@ -484,6 +496,7 @@ class ServerWindow:
                         self.new_sprite.dibujese(self.surface,1030,617)
                 return  1
             except:
+                #si no tiene soles no puede colocar nada 
                 print('No tiene soles')
 
  

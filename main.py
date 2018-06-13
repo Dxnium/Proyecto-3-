@@ -17,11 +17,15 @@ if variable == False:
     except:
         variable = True
 pygame.init()
-#
+#Inicia la comunicacion con el arduino en otro hilo
+#para evitar bugs si no detecta el control
 def start_arduino_async():
-    # Crea un hilo y le dice que ejeucte el metodo start_socket
+    # Crea un hilo y le dice que ejeucte el metodo start_arduino
     t = threading.Thread(target=start_arduino)
     t.start()
+
+#Lee los datos del arduino los descodifica y los
+#separa por medio de % para tener el comando que se necesita en limpio
 def start_arduino():
     while 1:
         datos = leerArduino()
@@ -29,6 +33,7 @@ def start_arduino():
             comando = datos[:datos.index("%")]
             valor = datos[datos.index("%")+1:]
             print("comando: ",comando, "  valor: ", valor)
+            #comandos para mover el cursor en la pantalla 
             if server_window != None:
                 if comando == 'arriba':
                     server_window.y_matriz -= 1
@@ -89,7 +94,10 @@ def start_arduino():
                         print(lista)
                         server_window.set_sprite(lista)
 
+                if comando == 'listo':
+                    server_window.btn_done_click()
             else:
+            #comandos para mover el cursor en la pantalla
                 if comando == 'arriba':
                     client_window.x_matriz -= 1
                     client_window.y-=120
@@ -112,6 +120,7 @@ def start_arduino():
                     client_window.dibuje_sprites()
 
                 ####comandos botones arduino
+                #colocan los sprites en la posicion en la que esta el cursor
                 if comando == 'planta':
                     if client_window.player_client.dinero != 0:
                         client_window.new_sprite = PersonajeSprite("media/images/verdeF.png")
@@ -151,7 +160,11 @@ def start_arduino():
                         print(lista)
                         client_window.dibujese()
                         client_window.dibuje_sprites()
+
+                if comando == 'listo':
+                    client_window.btn_done_click()
 #Lee los datos que envia el arduino por el serial 
+#lee los datos constantemente
 def leerArduino():
     while 1:
         try:
